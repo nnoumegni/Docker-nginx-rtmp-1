@@ -33,6 +33,12 @@ http {
         listen          8080;
         server_name     localhost;
 
+        # Uncomment these lines to enable SSL.
+        # Update the ssl paths with your own certificate and private key.
+        listen 443 ssl;
+        ssl_certificate     /opt/nginx/certs/cert.pem;
+        ssl_certificate_key /opt/nginx/certs/cert.key;
+
         location /hls {
             types {
                 application/vnd.apple.mpegurl m3u8;

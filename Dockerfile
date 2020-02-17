@@ -59,6 +59,7 @@ RUN apk update		&& \
 
 COPY --from=0 /opt/nginx /opt/nginx
 COPY --from=0 /tmp/nginx-rtmp-module/stat.xsl /opt/nginx/conf/stat.xsl
+ADD certs /opt/nginx/certs
 RUN rm /opt/nginx/conf/nginx.conf
 ADD run.sh /
 
